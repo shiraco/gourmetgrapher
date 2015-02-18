@@ -1,3 +1,4 @@
+# coding:utf-8
 import os
 from flask import Flask, request, redirect, url_for, render_template
 from werkzeug import secure_filename
