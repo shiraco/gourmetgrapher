@@ -32,7 +32,7 @@ def upload_file():
 
             # ファイルを保存
             file.save(os.path.join(app.config["UPLOAD_DIR"], filename))
-            tag = __image_tagging(os.path.join(app.config["UPLOAD_DIR"], filename))
+            # tag = __image_tagging(os.path.join(app.config["UPLOAD_DIR"], filename))
 
             return render_template("index.html", name=filename)
 
