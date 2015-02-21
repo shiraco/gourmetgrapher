@@ -60,3 +60,4 @@ venv/
 
 .idea/
 api_key.txt
+.env
