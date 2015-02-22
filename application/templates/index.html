@@ -26,7 +26,29 @@
     </div>
 
       {% if name %}
-        <img src="{{ url_for('static', filename = 'upload/' + name) }}">
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading">Uploaded photo</div>
+          <img class="img-responsive img-rounded" src="{{ url_for('static', filename = 'upload/' + name) }}">
+            <!-- Table -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>tag</th>
+                  <th>score</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for keyword in image_keywords %}
+                <tr>
+                  <td>{{ keyword.text }}</td>
+                  <td>{{ keyword.score}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
       {% endif %}
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

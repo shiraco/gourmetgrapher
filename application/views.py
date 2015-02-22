@@ -32,9 +32,10 @@ def upload_file():
 
             # ファイルを保存
             file.save(os.path.join(app.config["UPLOAD_DIR"], filename))
-            # tag = __image_tagging(os.path.join(app.config["UPLOAD_DIR"], filename))
-
-            return render_template("index.html", name=filename)
+            result = __image_tagging(os.path.join(app.config["UPLOAD_DIR"], filename))
+            if result["status"] == 'OK':
+                image_keywords = result["imageKeywords"]
+                return render_template("index.html", name=filename, image_keywords=image_keywords)
 
     return render_template("index.html")
 
