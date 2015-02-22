@@ -1,4 +1,5 @@
 # coding:utf-8
+import os
 
 
 class Config(object):
@@ -20,7 +21,7 @@ class StagingConfig(Config):
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    UPLOAD_DIR = "/Users/shiraishi/workspace/python/gourmetgrapher/application/static/upload"
+    UPLOAD_DIR = os.path.realpath('.') + "/application/static/upload"
 
 
 class TestingConfig(Config):
